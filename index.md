@@ -1,8 +1,3 @@
----
-title: Matching Logic
----
-
-
 ## What is Matching Logic? 
 
 ### For programming language semanticists: 
