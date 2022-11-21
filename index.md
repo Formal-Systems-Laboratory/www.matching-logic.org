@@ -1,4 +1,8 @@
-## What is Matching Logic? 
+---
+title: "What is Matching Logic?"
+---
+
+## What is Matching Logic?
 
 ### For programming language semanticists: 
 
