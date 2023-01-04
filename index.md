@@ -111,17 +111,29 @@ logic with the classic Hoare-style program verification.
   LMCS, 2017. 
   - This paper is a comprehensive in-depth survey paper of the mathematical
     foundations of matching logic. The paper discusses the motivation of
-    matching logic and its usage in K, defines its syntax and semantics,
+    matching logic and its usage in the [K framework](https://kframework.org),
+    defines its syntax and semantics,
     shows that many logics can be defined as theories, including FOL,
     modal logic S5, and separation logic, and proposes a sound and
-    complete proof system.
+    complete proof system for theories that feature equality. 
 
 - **Xiaohong Chen, Grigore Rosu**. *[Matching mu-Logic](https://fsl.cs.illinois.edu/publications/chen-rosu-2019-lics.html)*,
 LICS, 2019. 
   - This paper is the canonical paper that proposes matching logic in its full
-    generality. It discuss more logics that can be defined in matching logic, including FOL
-    with least fixpoints, modal μ-logic, temporal logics, dynamic logic,
-    separation logic with recursive definitions, and reachability logic. 
+    generality. It adds fixpoints to matching logic, as suggested by its name:
+    matching mu-logic, where "mu" is the operation that builds least fixpoints, as in
+    [modal mu-calculus](https://en.wikipedia.org/wiki/Modal_%CE%BC-calculus). 
+    To keep the name simple and consistent, we drop the "mu" and simply call it "matching logic"
+    in our current and future papers. 
+    This paper discusses more logics that can be defined in matching logic, 
+    including FOL with least fixpoints, modal μ-logic, temporal logics, dynamic logic,
+    separation logic with recursive definitions, and reachability logic (i.e., program verification). 
+    One of the main contributions of the paper is the proposal of a new proof system for matching logic
+    that supports formal reasoning in all theories, and thus addressing
+    the limitation of the previous LMCS'17 proof system that it only works for equality-featuring theories. 
+    The new proof system now serves as the foundation for formal reasoning in the K framework
+    and is used as a basis for generating machine-checkable correctness certificates for all K tools. 
+    
 
 ### Other publications 
 
