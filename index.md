@@ -4,7 +4,7 @@ title: "What is Matching Logic?"
 
 ## What is Matching Logic?
 
-### For programming language semanticists: 
+### For programming language semanticists:
 
 Matching logic is a unifying foundational logic for programming
 languages, specification, verification. It serves as the foundation of
@@ -57,7 +57,7 @@ defining the set of all its configurations and then defining a
 [transition system](https://en.wikipedia.org/wiki/Transition_system)
 over the configurations using rewrite rules.
 
-### For logicians: 
+### For logicians:
 
 Matching logic is a powerful extension of the [normal modal
 logic](https://en.wikipedia.org/wiki/Normal_modal_logic) with
@@ -91,60 +91,62 @@ logic:
 
 The diagram above on the right depicts the relationship among these
 logics/calculi/models, where arrows mean "is subsumed by" or "can be
-defined in". 
-As seen, many important logical systems can be subsumed by or 
+defined in".
+As seen, many important logical systems can be subsumed by or
 defined in matching logic as its fragments and/or logical theories.
 
-## Getting Started 
+## Getting Started
 
 Matching logic is the result of a continuous 20-year effort in finding a
-foundation logic for formal language frameworks, 
+foundation logic for formal language frameworks,
 such as [the K language framework](https:kframework.org), and has led
 many research papers. Here, we select
 some milestone papers for starters, discuss the ongoing projects and
 open problems, and review some earlier papers that compare matching
 logic with the classic Hoare-style program verification.
 
-### Core publications 
+### Core publications
 
 - **Grigore Rosu**. *[Matching Logic](https://fsl.cs.illinois.edu/publications/rosu-2017-lmcs.html)*,
-  LMCS, 2017. 
+  LMCS, 2017.
   - This paper is a comprehensive in-depth survey paper of the mathematical
     foundations of matching logic. The paper discusses the motivation of
     matching logic and its usage in the [K framework](https://kframework.org),
     defines its syntax and semantics,
     shows that many logics can be defined as theories, including FOL,
     modal logic S5, and separation logic, and proposes a sound and
-    complete proof system for theories that feature equality. 
+    complete proof system for theories that feature equality.
 
 - **Xiaohong Chen, Grigore Rosu**. *[Matching mu-Logic](https://fsl.cs.illinois.edu/publications/chen-rosu-2019-lics.html)*,
-LICS, 2019. 
+LICS, 2019.
   - This paper is the canonical paper that proposes matching logic in its full
     generality. It adds fixpoints to matching logic, as suggested by its name:
     matching mu-logic, where "mu" is the operation that builds least fixpoints, as in
-    [modal mu-calculus](https://en.wikipedia.org/wiki/Modal_%CE%BC-calculus). 
+    [modal mu-calculus](https://en.wikipedia.org/wiki/Modal_%CE%BC-calculus).
     To keep the name simple and consistent, we drop the "mu" and simply call it "matching logic"
-    in our current and future papers. 
-    This paper discusses more logics that can be defined in matching logic, 
+    in our current and future papers.
+    This paper discusses more logics that can be defined in matching logic,
     including FOL with least fixpoints, modal μ-logic, temporal logics, dynamic logic,
-    separation logic with recursive definitions, and reachability logic (i.e., program verification). 
+    separation logic with recursive definitions, and reachability logic (i.e., program verification).
     One of the main contributions of the paper is the proposal of a new proof system for matching logic
     that supports formal reasoning in all theories, and thus addressing
-    the limitation of the previous LMCS'17 proof system that it only works for equality-featuring theories. 
+    the limitation of the previous LMCS'17 proof system that it only works for equality-featuring theories.
     The new proof system now serves as the foundation for formal reasoning in the K framework
-    and is used as a basis for generating machine-checkable correctness certificates for all K tools. 
-    
+    and is used as a basis for generating machine-checkable correctness certificates for all K tools.
 
-### Other publications 
+
+### Other publications
 
   - **Zhengyao Lin, Xiaohong Chen, Minh-Thai Trinh, John Wang, Grigore Rosu**.
     *Generating Proof Certificates for a Language-Agnostic Deductive Program Verifier*,
     OOPSLA, 2023.
-    - A language-agnostic program verifier takes as input both a program with its formal specification and the formal semantics of the programming language in which the program is written, and then uses a language-agnostic verification algorithm to prove the program correct with respect to its specification, using directly the formal language semantics. Such a complex verifier can easily have bugs. This paper proposes a method to certify the correctness of each successful verification run by generating a proof certificate for it. The proof certificate can be checked by a small proof checker. The preliminary experiments apply the method to generate proof certificates for the verification of an imperative language, a functional language, and a virtual machine language, showing that the proposed method is language-agnostic. 
+    - A language-agnostic program verifier takes as input both a program with its formal specification and the formal semantics of the programming language in which the program is written, and then uses a language-agnostic verification algorithm to prove the program correct with respect to its specification, using directly the formal language semantics. Such a complex verifier can easily have bugs. This paper proposes a method to certify the correctness of each successful verification run by generating a proof certificate for it. The proof certificate can be checked by a small proof checker. The preliminary experiments apply the method to generate proof certificates for the verification of an imperative language, a functional language, and a virtual machine language, showing that the proposed method is language-agnostic.
+  - **Adam Fiedler**. [*Deduction in Matching Logic*](https://is.muni.cz/th/mcbtk/?lang=en), Master's thesis, 2022.
+    - Matching logic (ML) is a logic designed for reasoning about programs by means of operational semantics. We investigate the foundations of matching logic and its proof systems suited for formal verification. We focus on System H, which is complete w.r.t. most matching logic theories used in practice. A problem open for several years is whether System H is complete w.r.t. all theories. In this thesis, we identify a tractable if-and-only-if-condition for completeness of System H and exploit it to find new classes of complete theories. While solving the completeness problem, we review some existing results and answer related questions on expressiveness, consistency, and (un)satisfiability. For example, we show a detailed embedding of first-order logic in matching logic, prove the well-known compactness property for ML, and present a new technique of constructing canonical models for matching logic theories with equality. We also borrow some notions from first-order logic and study their properties in matching logic.
   - **Xiaohong Chen, Zhengyao Lin, Minh-Thai Trinh, Grigore Rosu**.
     *[Towards a Trustworthy Semantics-Based Language Framework via Proof Generation](https://fsl.cs.illinois.edu/publications/chen-lin-trinh-rosu-2021-cav.html)*,
     CAV, 2021.
-    - We pursue the vision of an ideal language framework, where programming language designers only need to define the formal syntax and semantics of their languages, and all language tools are automatically generated by the framework. Due to the complexity of such a language framework, it is a big challenge to ensure its trustworthiness and to establish the correctness of the autogenerated language tools. In this paper, we propose an innovative approach based on proof generation. The key idea is to generate proof objects as correctness certificates for each individual task that the language tools conduct, on a case-by-case basis, and use a trustworthy proof checker to check the proof objects. This way, we avoid formally verifying the entire framework, which is practically impossible, and thus can make the language framework both practical and trustworthy. As a first step, we formalize program execution as mathematical proofs and generate their complete proof objects. The experimental result shows that the performance of our proof object generation and proof checking is very promising. 
+    - We pursue the vision of an ideal language framework, where programming language designers only need to define the formal syntax and semantics of their languages, and all language tools are automatically generated by the framework. Due to the complexity of such a language framework, it is a big challenge to ensure its trustworthiness and to establish the correctness of the autogenerated language tools. In this paper, we propose an innovative approach based on proof generation. The key idea is to generate proof objects as correctness certificates for each individual task that the language tools conduct, on a case-by-case basis, and use a trustworthy proof checker to check the proof objects. This way, we avoid formally verifying the entire framework, which is practically impossible, and thus can make the language framework both practical and trustworthy. As a first step, we formalize program execution as mathematical proofs and generate their complete proof objects. The experimental result shows that the performance of our proof object generation and proof checking is very promising.
   - **Xiaohong Chen, Minh-Thai Trinh, Nishant Rodrigues, Lucas Pena, Grigore Rosu**.
     *[Towards A Unified Proof Framework for Automated Fixpoint Reasoning Using Matching Logic](https://fsl.cs.illinois.edu/publications/chen-pena-rodrigues-rosu-trinh-2020-oopsla.html)*,
     OOPSLA, 2020.
@@ -163,14 +165,14 @@ LICS, 2019.
     - Matching logic was recently proposed as a unifying logic for specifying and reasoning about static structure and dynamic behavior of programs. In matching logic, patterns and specifications are used to uniformly represent mathematical domains (such as numbers and Boolean values), datatypes, and transition systems, whose properties can be reasoned about using one fixed matching logic proof system. In this paper we give a tutorial to matching logic. We use a suite of examples to explain the basic concepts of matching logic and show how to capture many important mathematical domains, datatypes, and transition systems using patterns and specifications. We put special emphasis on the general principles of induction and coinduction in matching logic and show how to do inductive and coinductive reasoning about datatypes and codatatypes. To encourage the development of the future tools for matching logic, we propose and use throughout the paper a human-readable formal syntax to write specifications in a modular and compact way.
 
 
-To understand how matching logic powers 
+To understand how matching logic powers
 **formal program verification *for all languages***, read the following publications, where we compare
 our approach to program verification with the traditional Hoare-style
 verification approach:
 
 - **Xiaohong Chen, Grigore Rosu**.
   *[A Language-Independent Program Verification Framework](https://fsl.cs.illinois.edu/publications/chen-rosu-2018-isola.html)*,
-  ISoLA, 2018. 
+  ISoLA, 2018.
   - This invited paper describes an approach to language-independent deductive verification using the K semantics framework, in which an operational semantics of a language is defined and a program verifier together with other language tools are generated automatically, correct-by-construction.
 
 - **Xiaohong Chen, Daejun Park, Grigore Rosu**.
