@@ -200,6 +200,14 @@ verification approach:
   OOPSLA, 2012.
   - This paper presents a verification framework that is parametric in a (trusted) operational semantics of some programming language. The underlying proof system is language-independent and consists of eight proof rules. The proof system is proved partially correct and relatively complete (with respect to the programming language configuration model). To show its practicality, the generic framework is instantiated with a fragment of C and evaluated with encouraging results.
 
+## Community
+
+We welcome any comments, suggestions, and questions!
+We will be very happy if you reach out to us, for example, via the following channels:
+
+- [Discord](https://discord.com/channels/824582698147905556/1095987253978873927) (hosted by [Runtime Verification Inc.](https://runtimeverification.com/)): for interactive discussions about matching logic.
+
+- [Stackoverflow](https://stackoverflow.com/questions/tagged/matching-logic): for general questions.
 
 ## Related Links
 
