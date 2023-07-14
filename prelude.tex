@@ -1,0 +1,79 @@
+\usepackage[T1]{fontenc}
+\usepackage{mathtools}
+
+\usepackage[inline]{enumitem}
+\usepackage{bigdelim}
+\usepackage{multirow}
+
+\usepackage{subcaption}
+
+\usepackage{tabularx}
+
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows}
+\tikzset{
+->, % makes the edges directed
+>=stealth', % makes the arrow heads bold
+node distance=3cm, % specifies the minimum distance between two nodes. Change if necessary.
+intermediate/.style={minimum height=1em,align=center}, % sets the properties for each ’state’ node
+state/.style={rectangle,rounded corners,minimum height=3em,align=center,fill=gray!05,draw}, % sets the properties for each ’state’ node
+task/.style={rectangle,align=center,draw}, % sets the properties for each ’state’ node
+tool/.style={rectangle,align=center,draw}, % sets the properties for each ’state’ node
+initial text=$ $, % sets the text that appears on the start arrow
+}
+
+
+
+% Set theory
+
+
+% Logic
+
+% Matching Logic
+
+
+
+% Regular expressions
+
+
+
+
+
+
+
+
+% For the presentation
+\usepackage{forest}
+\forestset{
+  rule/.style 2 args={
+      edge label={node[midway, right] {\prule{{#1}}}},
+      edge+={->}
+        },
+}
+
+\setcounter{tocdepth}{1}
+
+
+\usepackage{listings}
+
+
+\lstdefinelanguage{mm0}{
+morekeywords={theorem,Pattern},
+literate=
+*{=>}{{$\Rightarrow$}}1
+ {<->}{{$\liff$}}1
+ {\\/}{{$\lor$}}1
+ {/\\}{{$\land$}}1
+ {Alpha}{{$\alpha$}}1
+ {Beta}{{$\beta$}}1
+ {epsilon}{{$\epsilon$}}1
+ {derivative}{{$\delta$}}1
+ {...}{{$\ldots$}}2
+}
+
+\usepackage{longtable}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+

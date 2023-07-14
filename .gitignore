@@ -1,0 +1,5 @@
+# Build products
+/.build
+
+# User's temporary files.
+/tmp

@@ -1,0 +1,10 @@
+<style type="text/css">
+.lemma:before       { content: "Lemma. " attr(title); }
+.theorem:before     { content: "Theorem. " attr(title); }
+.definition:before  { content: "Definition. " attr(title); }
+
+
+.lemma:before, .theorem:before, definition:before
+{ font-weight: bold; }
+
+</style>

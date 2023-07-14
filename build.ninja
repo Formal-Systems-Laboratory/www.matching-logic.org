@@ -1,0 +1,8 @@
+builddir = .build/
+
+chunkedhtml_opts = -t chunkedhtml --toc-depth=2 --filter=pandoc-crossref --katex --number-sections -V maxwidth=48em -H style.css --table-of-contents
+rule pandoc-html
+    command = rm -rf $out; pandoc $chunkedhtml_opts $in -o $out
+
+build .build/www/matching-logic : pandoc-html matching-logic.md | prelude.tex style.css
+
